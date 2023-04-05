@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de cambio</title>
+    <script>
+        function cambio() {
+            var tipo_cantidad = document.getElementsByName("tipo_cantidad");
+            console.log(tipo_cantidad);
+            var tipo_cambio = document.getElementsByName("tipo_cambio");
+            console.log(tipo_cambio);
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+            if (cantidad) {
+                for (let i = 0; i < tipo_cantidad.length; i++) {
+                    if (tipo_cantidad[i].checked) {
+                        if (tipo_cantidad[i].value == "dolares") {
+                            for (let i = 0; i < tipo_cambio.length; i++) {
+                                if (tipo_cambio[i].checked) {
+
+                                    if (tipo_cambio[i].value == "dolares") {
+                                        var cambio = cantidad
+                                        alert(cambio.toFixed(2) + " dólares");
+                                    }
+                                    if (tipo_cambio[i].value == "soles") {
+                                        var cambio = cantidad * 3.76
+                                        alert(cambio.toFixed(2) + " soles");
+                                    }
+                                    if (tipo_cambio[i].value == "euros") {
+                                        var cambio = cantidad * 0.92
+                                        alert(cambio.toFixed(2) + " euros");
+                                    }
+                                }
+                            }
+                        }
+                        if (tipo_cantidad[i].value == "soles") {
+                            for (let i = 0; i < tipo_cambio.length; i++) {
+                                if (tipo_cambio[i].checked) {
+
+                                    if (tipo_cambio[i].value == "dolares") {
+                                        var cambio = cantidad * 0.27
+                                        alert(cambio.toFixed(2) + " dólares");
+                                    }
+                                    if (tipo_cambio[i].value == "soles") {
+                                        var cambio = cantidad
+                                        alert(cambio.toFixed(2) + " soles");
+                                    }
+                                    if (tipo_cambio[i].value == "euros") {
+                                        var cambio = cantidad * 0.24
+                                        alert(cambio.toFixed(2) + " euros");
+                                    }
+                                }
+                            }
+                        }
+                        if (tipo_cantidad[i].value == "euros") {
+                            for (let i = 0; i < tipo_cambio.length; i++) {
+                                if (tipo_cambio[i].checked) {
+
+                                    if (tipo_cambio[i].value == "dolares") {
+                                        var cambio = cantidad * 1.09
+                                        alert(cambio.toFixed(2) + " dólares");
+                                    }
+                                    if (tipo_cambio[i].value == "soles") {
+                                        var cambio = cantidad * 4.11
+                                        alert(cambio.toFixed(2) + " soles");
+                                    }
+                                    if (tipo_cambio[i].value == "euros") {
+                                        var cambio = cantidad 
+                                        alert(cambio.toFixed(2) + " euros");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                alert("Ingrese monto a cambiar")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Casa de Cambio</h1>
+    <!-- AQUI EMPIEZA MI SCRIPT-->
+    <script>
+        document.write("Seleccionar moneda a enviar:") 
+    </script>
+
+    <input type="radio" name="tipo_cantidad" value="dolares" checked onclick="cambio()">Dólares
+    <input type="radio" name="tipo_cantidad" value="soles" onclick="cambio()">Soles
+    <input type="radio" name="tipo_cantidad" value="euros" onclick="cambio()">Euros</br>
+    <script>
+        document.write("Seleccionar moneda a cambiar:") 
+    </script>
+    <input type="radio" name="tipo_cambio" value="dolares" checked onclick="cambio()">Dólares
+    <input type="radio" name="tipo_cambio" value="soles" onclick="cambio()">Soles
+    <input type="radio" name="tipo_cambio" value="euros" onclick="cambio()">Euros
+    </br>
+    </br>
+    <script>
+        document.write("Ingrese monto") 
+    </script>
+
+    <form>
+
+        </br> <input type="text" id="cantidad" /> </br>
+        </br><button type="button" onclick="cambio()"> Cotizar</button>
+
+    </form>
+</body>
+
+</html>
